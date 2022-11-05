@@ -19,7 +19,7 @@ async function createServer() {
       cors({
         // origin: dev ? process.env.URL_APP : process.env.PRODUCTION_URL_APP,
         // origin: true,
-        credentials: true,
+        // credentials: true,
       })
     );
     app.use(express.json());
