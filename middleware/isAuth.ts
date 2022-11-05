@@ -10,7 +10,7 @@ export const isAuth: MiddlewareFn<MyContext> = async ({ context }, next) => {
   try {
     const token = authorization?.replace("Bearer ", "")!;
     const user = token && (jwt.verify(token, APP_SECRET) as any);
-    context.res.locals.userId = user.id;
+    context.res.locals.userId = user?.id;
     return next();
   } catch (err) {
     console.log(err);
