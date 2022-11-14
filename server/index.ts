@@ -16,11 +16,9 @@ async function createServer() {
     const app = express();
 
     app.use(
-      cors({
-        // origin: dev ? process.env.URL_APP : process.env.PRODUCTION_URL_APP,
-        origin: true,
-        // credentials: true,
-      })
+      cors()
+      // origin: dev ? process.env.URL_APP : process.env.PRODUCTION_URL_APP,
+      // credentials: true,
     );
     app.use(express.json());
 
