@@ -3,11 +3,10 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import cors from "cors";
-const bodyParser = require("body-parser");
 import createSchema from "../schema";
 import createSession from "../session";
 
-const dev = process.env.NODE_ENV !== "production";
+// const dev = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 8000;
 
 async function createServer() {
@@ -15,14 +14,15 @@ async function createServer() {
     await createSession();
     const app = express();
 
-    app.use(
-      cors({
-        origin: dev ? process.env.URL_APP : process.env.PRODUCTION_URL_APP,
-        credentials: true,
-      })
-    );
+    // app.use(
+    //   cors({
+    //     origin: dev ? process.env.URL_APP : process.env.PRODUCTION_URL_APP,
+    //     credentials: true,
+    //   })
+    // );
+
+    app.use(cors());
     app.use(express.json());
-    app.use(bodyParser.json());
 
     const schema = await createSchema();
 
