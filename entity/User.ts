@@ -17,7 +17,7 @@ export class User {
 
   @Field()
   @Property({ required: true })
-  nameFirst: string;
+  nameFull: string;
 
   @Field({ nullable: true })
   @Property()

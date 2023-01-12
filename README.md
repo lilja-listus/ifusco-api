@@ -6,7 +6,7 @@
 - install node, npm, yarn 
 - clone the repo
 - add .env
-- install everyting with yarn
+- install everything with yarn
 - start the project
 - compliment yourself for being awesome
 
@@ -58,3 +58,6 @@ server {
 
 
 
+
+
+pm2 start server/index.ts --watch

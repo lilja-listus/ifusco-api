@@ -13,7 +13,7 @@ import { Actions } from "../types/Actions";
 export class AuthResolver {
   @Mutation(() => UserResponse)
   async register(
-    @Arg("input") { email, password, nameFirst }: SignUpInput
+    @Arg("input") { email, password, nameFull }: SignUpInput
   ): Promise<UserResponse> {
     const existingUser = await UserModel.findOne({ email });
 
@@ -37,13 +37,13 @@ export class AuthResolver {
     const user = new UserModel({
       email,
       password: hashedPassword,
-      nameFirst,
+      nameFull,
       isParticipant,
     });
 
     await user.save();
 
-    await sendConfirmationEmail(email, nameFirst, Actions.NEW_USER);
+    await sendConfirmationEmail(email, nameFull, Actions.NEW_USER);
 
     const payload = { id: user.id };
 

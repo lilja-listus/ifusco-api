@@ -5,7 +5,7 @@
 
 type Abstract {
   _id: objectId!
-  author: User!
+  author: User
   language: String!
   text: String!
   title: String!
@@ -73,7 +73,7 @@ input RegistrationInput {
 
 input SignUpInput {
   email: String!
-  nameFirst: String
+  nameFull: String
   password: String!
 }
 
@@ -81,13 +81,13 @@ type User {
   _id: objectId!
   email: String!
   isParticipant: Boolean
-  nameFirst: String!
+  nameFull: String!
   password: String!
 }
 
 input UserInput {
   id: objectId
-  nameFirst: String
+  nameFull: String
   password: String
 }
 

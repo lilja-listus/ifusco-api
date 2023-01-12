@@ -21,7 +21,7 @@ export class Abstract {
   @Property({ required: true })
   language: string;
 
-  @Field(() => User)
+  @Field(() => User, { nullable: true })
   @Property({ ref: User, required: true })
   author: Ref<User>;
 }

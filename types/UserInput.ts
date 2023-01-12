@@ -11,5 +11,5 @@ export class UserInput implements Partial<User> {
   password?: string;
 
   @Field({ nullable: true })
-  nameFirst?: string;
+  nameFull?: string;
 }

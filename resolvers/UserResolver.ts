@@ -18,14 +18,14 @@ export class UserResolver {
   @Mutation(() => User)
   @UseMiddleware(isAuth)
   async editUser(@Arg("input") userInput: UserInput): Promise<User> {
-    const { id, nameFirst } = userInput;
+    const { id, nameFull } = userInput;
 
     const updatedUser = await UserModel.findOneAndUpdate(
       {
         _id: id,
       },
       {
-        nameFirst,
+        nameFull,
       },
       { new: true }
     );
