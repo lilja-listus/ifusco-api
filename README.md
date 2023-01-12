@@ -61,3 +61,4 @@ server {
 
 
 pm2 start server/index.ts --watch
+pm2 kill
