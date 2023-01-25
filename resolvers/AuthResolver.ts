@@ -24,6 +24,7 @@ export class AuthResolver {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     let isParticipant: boolean = false;
+    let isAdmin: boolean = false;
 
     const userIsParticipant: Participant | null =
       await ParticipantModel.findOne({
@@ -39,6 +40,7 @@ export class AuthResolver {
       password: hashedPassword,
       nameFull,
       isParticipant,
+      isAdmin,
     });
 
     await user.save();

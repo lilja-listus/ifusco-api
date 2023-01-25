@@ -10,16 +10,22 @@ const transporter = nodemailer.createTransport({
 const emailContent = (nameFirst: string) => ({
   [Actions.NEW_USER]: {
     subject: "New user confirmation",
-    text: `Congtats, ${nameFirst},  Now you are registered to ifusco website. 
-    you will be updated about the confa now. Don't forget to register to the conference itself (here: #)
+    text: `Congrats, ${nameFirst}, you are registered to IFUSCO website. 
+    The registration form for the conference itself will be available on the website after the registration is being open.
 
-    You can get more info soon.
+    ================================================
+
+    Поздравляем, ${nameFirst}, регистрация на сайт конференции ИФУСКО прошла успешно.
+    Не забудьте зарегестрироваться на саму конференцию.
 `,
   },
   [Actions.NEW_PARTICIPANT]: {
     subject: "IFUSCO 2023  Registration confirmation",
-    text: `Congtats, ${nameFirst},  You've been registered 
-    Поздравляем , ${nameFirst}, ты зарегестрирован на конференцию Ифуско 2023`,
+    text: `Congtats, ${nameFirst},  You've been registered as a participant at IFUSCO! See you in Turku or online!
+
+    ================================================
+
+    Поздравляем, ${nameFirst}, регистрация на Ифуско 2023 прошла успешно. До встречи в Турку или Онлайн`,
   },
 });
 

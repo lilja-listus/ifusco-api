@@ -30,6 +30,10 @@ export class Participant {
   @Field({ nullable: true })
   @Property()
   hasPaid: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  isOfflineParticipant: boolean;
 }
 
 export const ParticipantModel = getModelForClass(Participant);

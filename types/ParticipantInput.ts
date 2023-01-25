@@ -20,4 +20,7 @@ export class ParticipantInput implements Partial<Participant> {
 
   @Field({ nullable: true })
   university?: string;
+
+  @Field({ nullable: true })
+  isOfflineParticipant?: boolean;
 }

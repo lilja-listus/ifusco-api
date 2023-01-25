@@ -14,7 +14,14 @@ export class ParticipantResolver {
   @Mutation(() => Participant)
   async registerParticipant(
     @Arg("input")
-    { email, nameFirst, nameLast, country, university }: RegistrationInput
+    {
+      email,
+      nameFirst,
+      nameLast,
+      country,
+      university,
+      isOfflineParticipant,
+    }: RegistrationInput
   ): Promise<Participant> {
     const existingUser = await ParticipantModel.findOne({
       email,
@@ -30,6 +37,7 @@ export class ParticipantResolver {
       nameLast,
       country,
       university,
+      isOfflineParticipant,
     });
 
     await participant.save();
@@ -85,5 +93,11 @@ export class ParticipantResolver {
     @Arg("participantId", () => ObjectIdScalar) participantId: ObjectId
   ) {
     return await ParticipantModel.findById(participantId);
+  }
+
+  @Query(() => [Participant], { nullable: true })
+  @UseMiddleware(isAuth)
+  async AllParticipants() {
+    return await ParticipantModel.find();
   }
 }

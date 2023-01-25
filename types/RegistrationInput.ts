@@ -19,4 +19,7 @@ export class RegistrationInput {
 
   @Field({ nullable: true })
   hasPaid: boolean;
+
+  @Field({ nullable: true })
+  isOfflineParticipant: boolean;
 }

@@ -22,6 +22,10 @@ export class User {
   @Field({ nullable: true })
   @Property()
   isParticipant?: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  isAdmin?: boolean;
 }
 
 export const UserModel = getModelForClass(User);

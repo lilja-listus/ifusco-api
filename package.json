@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node --transpile-only server/index.ts NODE_OPTIONS=--max-old-space-size=1536",
+    "pm2": "NODE_ENV=production pm2 start server/index.ts --watch",
     "dev": "nodemon server/index.ts",
     "lint": "eslint.js"
   },
