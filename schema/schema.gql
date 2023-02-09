@@ -36,22 +36,36 @@ type Mutation {
 
 type Participant {
   _id: objectId!
+  agreeForPublications: Boolean
+  arePicturesAllowed: Boolean
+  communicationLanguage: String
   country: String
   email: String!
+  food: String
+  freeAccomModationInterest: Boolean
   hasPaid: Boolean
+  isHoldingPresentation: Boolean
   isOfflineParticipant: Boolean
   nameFirst: String!
   nameLast: String
+  phoneNumber: String
   university: String
 }
 
 input ParticipantInput {
+  agreeForPublications: Boolean
+  arePicturesAllowed: Boolean
+  communicationLanguage: String
   country: String
   email: String
+  food: String
+  freeAccomModationInterest: Boolean
   id: String
+  isHoldingPresentation: Boolean
   isOfflineParticipant: Boolean
   nameFirst: String
   nameLast: String
+  phoneNumber: String
   university: String
 }
 
@@ -66,12 +80,19 @@ type Query {
 }
 
 input RegistrationInput {
+  agreeForPublications: Boolean
+  arePicturesAllowed: Boolean
+  communicationLanguage: String
   country: String
   email: String!
+  food: String
+  freeAccomModationInterest: Boolean
   hasPaid: Boolean
+  isHoldingPresentation: Boolean
   isOfflineParticipant: Boolean
   nameFirst: String!
   nameLast: String
+  phoneNumber: String
   university: String
 }
 

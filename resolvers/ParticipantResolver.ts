@@ -21,6 +21,13 @@ export class ParticipantResolver {
       country,
       university,
       isOfflineParticipant,
+      phoneNumber,
+      food,
+      communicationLanguage,
+      arePicturesAllowed,
+      freeAccomModationInterest,
+      isHoldingPresentation,
+      agreeForPublications,
     }: RegistrationInput
   ): Promise<Participant> {
     const existingUser = await ParticipantModel.findOne({
@@ -38,6 +45,13 @@ export class ParticipantResolver {
       country,
       university,
       isOfflineParticipant,
+      phoneNumber,
+      communicationLanguage,
+      food,
+      arePicturesAllowed,
+      freeAccomModationInterest,
+      isHoldingPresentation,
+      agreeForPublications,
     });
 
     await participant.save();
@@ -56,7 +70,22 @@ export class ParticipantResolver {
       console.error("The registered participant is not a user");
     }
 
-    await sendConfirmationEmail(email, nameFirst, Actions.NEW_PARTICIPANT);
+    await sendConfirmationEmail(
+      email,
+      nameFirst,
+      Actions.NEW_PARTICIPANT,
+      nameLast,
+      country,
+      university,
+      isOfflineParticipant,
+      phoneNumber,
+      communicationLanguage,
+      food,
+      arePicturesAllowed,
+      freeAccomModationInterest,
+      isHoldingPresentation,
+      agreeForPublications
+    );
 
     return participant;
   }

@@ -34,6 +34,34 @@ export class Participant {
   @Field({ nullable: true })
   @Property()
   isOfflineParticipant: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  phoneNumber: string;
+
+  @Field({ nullable: true })
+  @Property()
+  communicationLanguage: string;
+
+  @Field({ nullable: true })
+  @Property()
+  food: string;
+
+  @Field({ nullable: true })
+  @Property()
+  arePicturesAllowed: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  freeAccomModationInterest: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  isHoldingPresentation: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  agreeForPublications: boolean;
 }
 
 export const ParticipantModel = getModelForClass(Participant);

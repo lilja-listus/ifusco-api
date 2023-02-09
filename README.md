@@ -54,11 +54,9 @@ server {
 }
 ```
 
-
-
-
-
-
-
-pm2 start server/index.ts --watch
+## update the server after pulling the latest changes
+```
 pm2 kill
+tsc
+pm2 start ./dist/server/index.js
+``` 

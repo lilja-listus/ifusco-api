@@ -23,4 +23,25 @@ export class ParticipantInput implements Partial<Participant> {
 
   @Field({ nullable: true })
   isOfflineParticipant?: boolean;
+
+  @Field({ nullable: true })
+  phoneNumber: string;
+
+  @Field({ nullable: true })
+  communicationLanguage: string;
+
+  @Field({ nullable: true })
+  food: string;
+
+  @Field({ nullable: true })
+  arePicturesAllowed: boolean;
+
+  @Field({ nullable: true })
+  freeAccomModationInterest: boolean;
+
+  @Field({ nullable: true })
+  isHoldingPresentation: boolean;
+
+  @Field({ nullable: true })
+  agreeForPublications: boolean;
 }
