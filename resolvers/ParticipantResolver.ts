@@ -28,6 +28,7 @@ export class ParticipantResolver {
       freeAccomModationInterest,
       isHoldingPresentation,
       agreeForPublications,
+      hasPaid,
     }: RegistrationInput
   ): Promise<Participant> {
     const existingUser = await ParticipantModel.findOne({
@@ -52,6 +53,7 @@ export class ParticipantResolver {
       freeAccomModationInterest,
       isHoldingPresentation,
       agreeForPublications,
+      hasPaid,
     });
 
     await participant.save();
@@ -95,19 +97,15 @@ export class ParticipantResolver {
   async editParticipant(
     @Arg("input") participantInput: ParticipantInput
   ): Promise<Participant> {
-    const { id, nameFirst, nameLast, country, university } = participantInput;
+    const { id, hasPaid } = participantInput;
 
     const updatedParticipant = await ParticipantModel.findOneAndUpdate(
       {
         _id: id,
       },
       {
-        nameFirst,
-        nameLast,
-        country,
-        university,
-      },
-      { new: true }
+        hasPaid,
+      }
     );
 
     if (!updatedParticipant) {

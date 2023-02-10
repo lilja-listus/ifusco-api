@@ -60,6 +60,7 @@ input ParticipantInput {
   email: String
   food: String
   freeAccomModationInterest: Boolean
+  hasPaid: Boolean
   id: String
   isHoldingPresentation: Boolean
   isOfflineParticipant: Boolean
