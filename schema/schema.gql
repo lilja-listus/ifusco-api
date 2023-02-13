@@ -42,7 +42,7 @@ type Participant {
   arePicturesAllowed: Boolean
   communicationLanguage: String
   country: String
-  email: String!
+  email: String
   food: String
   freeAccomModationInterest: Boolean
   hasPaid: Boolean
@@ -50,7 +50,10 @@ type Participant {
   isOfflineParticipant: Boolean
   nameFirst: String!
   nameLast: String
+  needTShirt: Boolean
   phoneNumber: String
+  tShirtColor: String
+  tShirtSize: String
   university: String
 }
 
@@ -68,7 +71,10 @@ input ParticipantInput {
   isOfflineParticipant: Boolean
   nameFirst: String
   nameLast: String
+  needTShirt: Boolean
   phoneNumber: String
+  tShirtColor: String
+  tShirtSize: String
   university: String
 }
 
@@ -88,7 +94,7 @@ input RegistrationInput {
   arePicturesAllowed: Boolean
   communicationLanguage: String
   country: String
-  email: String!
+  email: String
   food: String
   freeAccomModationInterest: Boolean
   hasPaid: Boolean
@@ -96,7 +102,10 @@ input RegistrationInput {
   isOfflineParticipant: Boolean
   nameFirst: String!
   nameLast: String
+  needTShirt: Boolean
   phoneNumber: String
+  tShirtColor: String
+  tShirtSize: String
   university: String
 }
 

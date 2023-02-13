@@ -7,8 +7,9 @@ export class Participant {
   @Field()
   readonly _id: ObjectId;
 
-  @Field()
-  email: string;
+  @Field({ nullable: true })
+  @Property()
+  email?: string;
 
   @Field()
   @Property()
@@ -61,6 +62,18 @@ export class Participant {
   @Field({ nullable: true })
   @Property()
   agreeForPublications: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  needTShirt: boolean;
+
+  @Field({ nullable: true })
+  @Property()
+  tShirtSize: string;
+
+  @Field({ nullable: true })
+  @Property()
+  tShirtColor: string;
 }
 
 export const ParticipantModel = getModelForClass(Participant);

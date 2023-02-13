@@ -82,7 +82,10 @@ export const sendConfirmationEmail = (
   arePicturesAllowed?: boolean,
   freeAccomModationInterest?: boolean,
   isHoldingPresentation?: boolean,
-  agreeForPublications?: boolean
+  agreeForPublications?: boolean,
+  needTShirt?: boolean,
+  tShirtSize?: string,
+  tShirtColor?: string
 ) => {
   const participantInfo = {
     nameFirst,
@@ -98,6 +101,9 @@ export const sendConfirmationEmail = (
     freeAccomModationInterest,
     isHoldingPresentation,
     agreeForPublications,
+    needTShirt,
+    tShirtSize,
+    tShirtColor,
   };
 
   const options = {

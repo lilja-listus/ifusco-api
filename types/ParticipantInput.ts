@@ -47,4 +47,13 @@ export class ParticipantInput implements Partial<Participant> {
 
   @Field({ nullable: true })
   hasPaid?: boolean;
+
+  @Field({ nullable: true })
+  needTShirt?: boolean;
+
+  @Field({ nullable: true })
+  tShirtSize?: string;
+
+  @Field({ nullable: true })
+  tShirtColor?: string;
 }

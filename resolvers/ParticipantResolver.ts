@@ -29,13 +29,16 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
+      needTShirt,
+      tShirtSize,
+      tShirtColor,
     }: RegistrationInput
   ): Promise<Participant> {
-    const existingUser = await ParticipantModel.findOne({
+    const existingParticipant = await ParticipantModel.findOne({
       email,
     });
 
-    if (existingUser) {
+    if (existingParticipant) {
       throw new Error("The participant has already registered");
     }
 
@@ -54,6 +57,9 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
+      needTShirt,
+      tShirtSize,
+      tShirtColor,
     });
 
     await participant.save();
@@ -64,8 +70,7 @@ export class ParticipantResolver {
       },
       {
         isParticipant: true,
-      },
-      { new: true }
+      }
     );
 
     if (!updatedUser) {
@@ -86,7 +91,10 @@ export class ParticipantResolver {
       arePicturesAllowed,
       freeAccomModationInterest,
       isHoldingPresentation,
-      agreeForPublications
+      agreeForPublications,
+      needTShirt,
+      tShirtSize,
+      tShirtColor
     );
 
     return participant;

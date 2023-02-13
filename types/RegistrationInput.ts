@@ -2,7 +2,7 @@ import { InputType, Field } from "type-graphql";
 
 @InputType()
 export class RegistrationInput {
-  @Field()
+  @Field({ nullable: true })
   email: string;
 
   @Field()
@@ -43,4 +43,13 @@ export class RegistrationInput {
 
   @Field({ nullable: true })
   agreeForPublications: boolean;
+
+  @Field({ nullable: true })
+  needTShirt: boolean;
+
+  @Field({ nullable: true })
+  tShirtSize: string;
+
+  @Field({ nullable: true })
+  tShirtColor: string;
 }
