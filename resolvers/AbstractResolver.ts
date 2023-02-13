@@ -46,6 +46,7 @@ export class AbstractResolver {
   ): Promise<Abstract> {
     const abstract = new AbstractModel({
       ...abstractInput,
+      isProofread: false,
       author: ctx.res.locals.userId,
     } as Abstract);
 
@@ -56,19 +57,19 @@ export class AbstractResolver {
   @Mutation(() => Abstract)
   @UseMiddleware(isAuth)
   async editAbstract(
-    @Arg("input") abstractInput: AbstractInput,
-    @Ctx() ctx: MyContext
+    @Arg("input") abstractInput: AbstractInput
+    // @Ctx() ctx: MyContext
   ): Promise<Abstract> {
-    const { id, title, text, language } = abstractInput;
+    const { id, title, text, language, isProofread } = abstractInput;
     const abstract = await AbstractModel.findOneAndUpdate(
       {
         _id: id,
-        author: ctx.res.locals.userId,
       },
       {
         title,
         text,
         language,
+        isProofread,
       },
       { runValidators: true, new: true }
     );

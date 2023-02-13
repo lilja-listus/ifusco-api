@@ -6,6 +6,7 @@
 type Abstract {
   _id: objectId!
   author: User
+  isProofread: Boolean
   language: String!
   text: String!
   title: String!
@@ -13,6 +14,7 @@ type Abstract {
 
 input AbstractInput {
   id: objectId
+  isProofread: Boolean
   language: String!
   text: String!
   title: String!
@@ -73,6 +75,7 @@ input ParticipantInput {
 type Query {
   AllParticipants: [Participant!]
   Participant(participantId: objectId!): Participant
+  ParticipantByEmail(email: String!): Participant
   abstract(abstractId: objectId!): Abstract
   abstracts: [Abstract!]!
   abstractsByAuthor: Abstract!

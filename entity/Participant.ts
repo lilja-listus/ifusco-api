@@ -8,7 +8,6 @@ export class Participant {
   readonly _id: ObjectId;
 
   @Field()
-  @Property({ required: true })
   email: string;
 
   @Field()

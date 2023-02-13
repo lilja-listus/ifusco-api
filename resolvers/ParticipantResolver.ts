@@ -122,6 +122,13 @@ export class ParticipantResolver {
     return await ParticipantModel.findById(participantId);
   }
 
+  @Query(() => Participant, { nullable: true })
+  async ParticipantByEmail(
+    @Arg("email") mail: string
+  ): Promise<Participant | null> {
+    return await ParticipantModel.findOne({ email: mail });
+  }
+
   @Query(() => [Participant], { nullable: true })
   @UseMiddleware(isAuth)
   async AllParticipants() {

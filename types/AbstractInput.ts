@@ -14,4 +14,7 @@ export class AbstractInput {
 
   @Field()
   language: string;
+
+  @Field({ nullable: true })
+  isProofread?: boolean;
 }
