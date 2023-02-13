@@ -5,9 +5,9 @@ import { ObjectIdScalar } from "../schema/object-id.scalar";
 import { Participant, ParticipantModel } from "../entity/Participant";
 import { ParticipantInput } from "../types/ParticipantInput";
 import { RegistrationInput } from "../types/RegistrationInput";
-import { sendConfirmationEmail } from "../middleware/sendMail";
+// import { sendConfirmationEmail } from "../middleware/sendMail";
 import { UserModel } from "../entity/User";
-import { Actions } from "../types/Actions";
+// import { Actions } from "../types/Actions";
 
 @Resolver(() => Participant)
 export class ParticipantResolver {
@@ -29,15 +29,18 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
+      needTShirt,
+      tShirtSize,
+      tShirtColor,
     }: RegistrationInput
   ): Promise<Participant> {
-    const existingUser = await ParticipantModel.findOne({
-      email,
-    });
+    // const existingParticipant = await ParticipantModel.findOne({
+    //   email,
+    // });
 
-    if (existingUser) {
-      throw new Error("The participant has already registered");
-    }
+    // if (existingParticipant) {
+    //   throw new Error("The participant has already registered");
+    // }
 
     const participant = new ParticipantModel({
       email,
@@ -54,7 +57,12 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
+      needTShirt,
+      tShirtSize,
+      tShirtColor,
     });
+
+    // console.log(participant, "participant=======");
 
     await participant.save();
 
@@ -64,30 +72,34 @@ export class ParticipantResolver {
       },
       {
         isParticipant: true,
-      },
-      { new: true }
+      }
     );
 
     if (!updatedUser) {
       console.error("The registered participant is not a user");
     }
 
-    await sendConfirmationEmail(
-      email,
-      nameFirst,
-      Actions.NEW_PARTICIPANT,
-      nameLast,
-      country,
-      university,
-      isOfflineParticipant,
-      phoneNumber,
-      communicationLanguage,
-      food,
-      arePicturesAllowed,
-      freeAccomModationInterest,
-      isHoldingPresentation,
-      agreeForPublications
-    );
+    // await sendConfirmationEmail(
+    //   email,
+    //   nameFirst,
+    //   Actions.NEW_PARTICIPANT,
+    //   nameLast,
+    //   country,
+    //   university,
+    //   isOfflineParticipant,
+    //   phoneNumber,
+    //   communicationLanguage,
+    //   food,
+    //   arePicturesAllowed,
+    //   freeAccomModationInterest,
+    //   isHoldingPresentation,
+    //   agreeForPublications,
+    //   needTShirt,
+    //   tShirtSize,
+    //   tShirtColor
+    // );
+
+    console.log(participant, "participant = ====");
 
     return participant;
   }
