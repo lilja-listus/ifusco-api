@@ -5,7 +5,7 @@ import { ObjectIdScalar } from "../schema/object-id.scalar";
 import { Participant, ParticipantModel } from "../entity/Participant";
 import { ParticipantInput } from "../types/ParticipantInput";
 import { RegistrationInput } from "../types/RegistrationInput";
-// import { sendConfirmationEmail } from "../middleware/sendMail";
+ import { sendConfirmationEmail } from "../middleware/sendMail";
 import { UserModel } from "../entity/User";
 // import { Actions } from "../types/Actions";
 
@@ -33,7 +33,8 @@ export class ParticipantResolver {
       tShirtSize,
       tShirtColor,
     }: RegistrationInput
-  ): Promise<Participant> {
+  ): Promise<Participant> 
+
     // const existingParticipant = await ParticipantModel.findOne({
     //   email,
     // });
@@ -41,6 +42,14 @@ export class ParticipantResolver {
     // if (existingParticipant) {
     //   throw new Error("The participant has already registered");
     // }
+=======
+    const existingParticipant = await ParticipantModel.findOne({
+      email,
+    });
+
+    if (existingParticipant) {
+      throw new Error("The participant has already registered");
+    }
 
     const participant = new ParticipantModel({
       email,
@@ -79,6 +88,7 @@ export class ParticipantResolver {
       console.error("The registered participant is not a user");
     }
 
+<<<<<<< HEAD
     // await sendConfirmationEmail(
     //   email,
     //   nameFirst,
@@ -100,6 +110,27 @@ export class ParticipantResolver {
     // );
 
     console.log(participant, "participant = ====");
+=======
+    await sendConfirmationEmail(
+      email,
+      nameFirst,
+      Actions.NEW_PARTICIPANT,
+      nameLast,
+      country,
+      university,
+      isOfflineParticipant,
+      phoneNumber,
+      communicationLanguage,
+      food,
+      arePicturesAllowed,
+      freeAccomModationInterest,
+      isHoldingPresentation,
+      agreeForPublications,
+      needTShirt,
+      tShirtSize,
+      tShirtColor
+    );
+>>>>>>> 38fec9c2ec6022e7521bf31ae488078f85bc1f09
 
     return participant;
   }
