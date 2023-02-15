@@ -10,7 +10,8 @@ const transporter = nodemailer.createTransport({
 const emailContent = (participantInfo: any) => ({
   [Actions.NEW_USER]: {
     subject: "New User Confirmation",
-    text: `Congrats, ${participantInfo.nameFirst}, you are registered an account at IFUSCO website. 
+    text: `
+    Congrats, ${participantInfo.nameFirst}, you are registered an account at IFUSCO website. 
     
     The registration form for the conference will be available on the website after the registration is open.
 
@@ -60,7 +61,8 @@ const emailContent = (participantInfo: any) => ({
   },
   [Actions.NEW_PARTICIPANT]: {
     subject: "IFUSCO 2023  Registration confirmation",
-    text: `Congtats, ${participantInfo.nameFirst},  You've been registered as a participant at IFUSCO! 
+    text: `
+    Congtats, ${participantInfo.nameFirst},  You've been registered as a participant at IFUSCO! 
 
     Please, don't forget to pay the registration fee which you can do with a bank transfer to SUGRI official back account. 
     
