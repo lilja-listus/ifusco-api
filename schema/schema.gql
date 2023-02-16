@@ -27,6 +27,7 @@ input LoginInput {
 
 type Mutation {
   addAbstract(input: AbstractInput!): Abstract!
+  addParticipationDetails(input: ParticipationDetailsInput!): ParticipationDetails!
   deleteAbstract(abstractId: objectId!): Boolean!
   editAbstract(input: AbstractInput!): Abstract!
   editParticipant(input: ParticipantInput!): Participant!
@@ -78,6 +79,24 @@ input ParticipantInput {
   university: String
 }
 
+type ParticipationDetails {
+  _id: objectId!
+  abstract: Boolean
+  accommodation: Boolean!
+  conferenceDinner: Boolean!
+  participant: Participant
+  trip: String!
+}
+
+input ParticipationDetailsInput {
+  abstract: Boolean!
+  accommodation: Boolean!
+  conferenceDinner: Boolean!
+  id: objectId
+  participantId: objectId!
+  trip: String!
+}
+
 type Query {
   AllParticipants: [Participant!]
   Participant(participantId: objectId!): Participant
@@ -86,6 +105,9 @@ type Query {
   abstracts: [Abstract!]!
   abstractsByAuthor: Abstract!
   currentUser: User!
+  getAllParticipationDetails: [ParticipationDetails!]!
+  participationDetailsById(participationDetailsId: objectId!): ParticipationDetails
+  participationDetailsByParticipant(participantId: objectId!): ParticipationDetails!
   user(userId: objectId!): User
 }
 

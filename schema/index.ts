@@ -9,6 +9,7 @@ import { ObjectIdScalar } from "./object-id.scalar";
 import { TypegooseMiddleware } from "../middleware/typegoose";
 import { AbstractResolver } from "../resolvers/AbstractResolver";
 import { ParticipantResolver } from "../resolvers/ParticipantResolver";
+import { ParticipationDetailsResolver } from "../resolvers/ParticipationDetailsResolver";
 
 export default async function createSchema(): Promise<GraphQLSchema> {
   const schema = await buildSchema({
@@ -17,6 +18,7 @@ export default async function createSchema(): Promise<GraphQLSchema> {
       AuthResolver,
       AbstractResolver,
       ParticipantResolver,
+      ParticipationDetailsResolver,
     ],
     emitSchemaFile: path.resolve(__dirname, "schema.gql"),
     globalMiddlewares: [TypegooseMiddleware],

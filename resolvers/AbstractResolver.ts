@@ -25,7 +25,6 @@ export class AbstractResolver {
     return await AbstractModel.findById(abstractId);
   }
 
-  // edit for to be the admin?
   @Query(() => [Abstract])
   @UseMiddleware(isAuth)
   async abstracts() {
