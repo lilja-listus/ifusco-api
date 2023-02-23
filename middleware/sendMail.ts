@@ -9,13 +9,13 @@ const transporter = nodemailer.createTransport({
 
 const emailContent = (participantInfo: any) => ({
   [Actions.NEW_USER]: {
-    subject: "New User Confirmation",
+    subject: "New User Confirmation (automatic message)",
     text: `
     Congrats, ${participantInfo.nameFirst}, you are registered an account at IFUSCO website. 
     
     The registration form for the conference will be available on the website after the registration is open.
 
-    Please, mind that this is an automatic message, please don't reply to it. If you have any questions, please contact us through any of our official channels (https://ifusco.vercel.app/navigation/contact). 
+    Please, mind that this is an automatic message, please don't reply to it. If you have any questions, please contact us through any of our official channels (https://ifusco2023.info/navigation/contact). 
 
     ================================================
 
@@ -23,7 +23,7 @@ const emailContent = (participantInfo: any) => ({
     
     Itse konferenssin rekisteröitymislomakkeen voi täyttää sivustolla rekisteröinnin alettua.
 
-    Muista, että tämä on automaattinen viesti, älä vastaa siihen. Jos sinulla on kysyttävää, ota meihin yhteyttä minkä tahansa virallisten kanavien kautta (https://ifusco.vercel.app/navigation/contact).
+    Muista, että tämä on automaattinen viesti, älä vastaa siihen. Jos sinulla on kysyttävää, ota meihin yhteyttä minkä tahansa virallisten kanavien kautta (https://ifusco2023.info/navigation/contact).
    
     ================================================
 
@@ -31,7 +31,15 @@ const emailContent = (participantInfo: any) => ({
    
     A regisztrációs űrlap magára a konferenciára elérhetővé válik, amint a regisztrációs időszak kezdetét veszi.
 
-    Ez egy automatikus visszaigazoló e-mail, kérlek ne válaszolj rá! Amennyiben kérdésed van, elész minket a hivatalos csatornáink egyikén (https://ifusco.vercel.app/navigation/contact).
+    Ez egy automatikus visszaigazoló e-mail, kérlek ne válaszolj rá! Amennyiben kérdésed van, elész minket a hivatalos csatornáink egyikén (https://ifusco2023.info/navigation/contact).
+
+    ================================================
+
+    Õnnitleme, ${participantInfo.nameFirst}, olete registreeritud IFUSCO veebilehel.
+    
+    Registreerimisvorm konverentsile ise on saadaval veebilehel pärast seda, kui registreerimine on avatud.
+
+    Palun pidage meeles, et see on automaatne sõnum, palun ärge sellele vastake. Kui teil on küsimusi, võtke meiega ühendust meie ametlike kanalite kaudu.
 
     ================================================
 
@@ -39,7 +47,7 @@ const emailContent = (participantInfo: any) => ({
    
     Сама реєстраційна форма для участі у конференції буде доступна на нашій сторінці після відкриття реєстрації.
 
-    Наголошуємо, що це повідомлення є автоматичним, не відповідайте на нього. Якщо у вас є питання, зверніться до нас через будь-який з наших офіційних каналів (https://ifusco.vercel.app/navigation/contact). 
+    Наголошуємо, що це повідомлення є автоматичним, не відповідайте на нього. Якщо у вас є питання, зверніться до нас через будь-який з наших офіційних каналів (https://ifusco2023.info/navigation/contact). 
   
     ================================================
    
@@ -47,7 +55,7 @@ const emailContent = (participantInfo: any) => ({
    
     Das Anmeldeformular für die Konferenz selbst ist hier auf der Webseite verfügbar, sobald die Registrierung geöffnet ist.
 
-    Dies ist eine automatische Nachricht, bitte antworte nicht darauf. Bei Fragen kontaktiere uns bitte über einen unserer offiziellen Kanäle (https://ifusco.vercel.app/navigation/contact).
+    Dies ist eine automatische Nachricht, bitte antworte nicht darauf. Bei Fragen kontaktiere uns bitte über einen unserer offiziellen Kanäle (https://ifusco2023.info/navigation/contact).
 
     ================================================
 
@@ -55,12 +63,12 @@ const emailContent = (participantInfo: any) => ({
     
     Форма регистрации на конференцию будет доступна на нашем сайте после открытия регистрации.
 
-    Пожалуйста, обратите внимание, что это автоматическое сообщение, не отвечайте на него. Если у вас есть какие-либо вопросы, свяжитесь с нами по любому из наших официальных каналов(https://ifusco.vercel.app/navigation/contact)
+    Пожалуйста, обратите внимание, что это автоматическое сообщение, не отвечайте на него. Если у вас есть какие-либо вопросы, свяжитесь с нами по любому из наших официальных каналов(https://ifusco2023.info/navigation/contact)
 
 `,
   },
   [Actions.NEW_PARTICIPANT]: {
-    subject: "IFUSCO 2023  Registration confirmation",
+    subject: "IFUSCO 2023  Registration Confirmation (automatic message)",
     text: `
     Congtats, ${participantInfo.nameFirst},  You've been registered as a participant at IFUSCO! 
 
@@ -98,29 +106,41 @@ const emailContent = (participantInfo: any) => ({
 
    ================================================
 
-   Вітаємо, ${participantInfo.nameFirst}, вас зареєстровано як учасника IFUSCO!
+    Õnnitleme, ${participantInfo.nameFirst}, Teid on registreeritud IFUSCO osalejaks!
 
-   Будь ласка, не забудьте сплатити реєстраційний внесок. Це можна зробити за допомогою банківського переказу на офіційний банківський рахунок SUGRI.
+    Palun ärge unustage tasuda registreerimistasu, mida saate teha pangaülekandega SUGRI ametlikule pangakontole.
+
+    Kui teil on küsimusi või probleeme, palun kirjutage meile aadressil: ifusco2023@utu.fi;
+
+    Kohtumiseni Turus või veebis!
+
+    Palun kontrollige esitatud andmeid ja võtke meiega ühendust, kui midagi on valesti.
+
+    ================================================
+
+    Вітаємо, ${participantInfo.nameFirst}, вас зареєстровано як учасника IFUSCO!
+
+    Будь ласка, не забудьте сплатити реєстраційний внесок. Це можна зробити за допомогою банківського переказу на офіційний банківський рахунок SUGRI.
   
-   У випадку питань чи проблем звертайтеся до нас: ifusco2023@utu.fi.
+    У випадку питань чи проблем звертайтеся до нас: ifusco2023@utu.fi.
   
-   Побачимося в Турку або онлайн!
+    Побачимося в Турку або онлайн!
 
-   Будь ласка, перевірте вказані дані та повідомте нам, якщо щось не так.
+    Будь ласка, перевірте вказані дані та повідомте нам, якщо щось не так.
 
-   ================================================
+    ================================================
 
-   Glückwunsch, ${participantInfo.nameFirst}, du hast dich erfolgreich zur Teilnahme an der IFUSCO registriert!
+    Glückwunsch, ${participantInfo.nameFirst}, du hast dich erfolgreich zur Teilnahme an der IFUSCO registriert!
 
-   Vergiss bitte nicht, die Teilnahmegebühr via Banküberweisung ans offizielle SUGRI Bankkonto zu überweisen.
+    Vergiss bitte nicht, die Teilnahmegebühr via Banküberweisung ans offizielle SUGRI Bankkonto zu überweisen.
  
-   Bei Fragen oder Anregungen schreibe uns bitte an: ifusco2023@utu.fi.
+    Bei Fragen oder Anregungen schreibe uns bitte an: ifusco2023@utu.fi.
  
-   Bis bald in Turku oder online!
+    Bis bald in Turku oder online!
 
-   Bitte überprüfe die von dir angegebenen Daten und kontaktiere uns, falls etwas nicht stimmt.
+    Bitte überprüfe die von dir angegebenen Daten und kontaktiere uns, falls etwas nicht stimmt.
 
-   ================================================
+    ================================================
 
     Поздравляем, ${participantInfo.nameFirst}, регистрация на Ифуско 2023 прошла успешно. 
     
@@ -151,6 +171,40 @@ const emailContent = (participantInfo: any) => ({
     Agree to Appear in Publications:  ${participantInfo.agreeForPublications},
     
     `,
+  },
+  [Actions.HAS_PAID]: {
+    subject: "IFUSCO 2023 Payment confirmation (automatic message)",
+    text: `
+   ${participantInfo.nameFirst}, your participation fee payment was received. 
+   
+   ================================================
+
+   ${participantInfo.nameFirst}, osallistumismaksunne maksu on vastaanotettu.
+   
+   ================================================
+
+   ${participantInfo.nameFirst}, a részvételi díj befizetése beérkezett.
+   
+   ================================================
+   
+   ${participantInfo.nameFirst}, teie osavõtutasu makse on laekunud.
+   
+   ================================================
+
+   ${participantInfo.nameFirst}, ваш платіж за участь у конференції отримано. 
+   
+   ================================================
+
+   ${participantInfo.nameFirst}, die Zahlung Ihrer Teilnahmegebühr eingegangen ist. 
+   
+   ================================================
+
+   ${participantInfo.nameFirst}, оплата за участие была получена. 
+   
+
+  Ifusco 2023 
+   
+   `,
   },
 });
 

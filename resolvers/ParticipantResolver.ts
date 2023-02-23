@@ -119,6 +119,12 @@ export class ParticipantResolver {
     if (!updatedParticipant) {
       throw new Error("Participant not found");
     }
+    updatedParticipant &&
+      (await sendConfirmationEmail(
+        updatedParticipant.email,
+        updatedParticipant.nameFirst,
+        Actions.HAS_PAID
+      ));
 
     return updatedParticipant;
   }

@@ -9,7 +9,7 @@ export class Participant {
 
   @Field({ nullable: true })
   @Property()
-  email?: string;
+  email: string;
 
   @Field()
   @Property()
