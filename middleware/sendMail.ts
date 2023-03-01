@@ -35,12 +35,12 @@ const emailContent = (participantInfo: any) => ({
 
     ================================================
 
-    Õnnitleme, ${participantInfo.nameFirst}, olete registreeritud IFUSCO veebilehel.
-    
-    Registreerimisvorm konverentsile ise on saadaval veebilehel pärast seda.
-
-    Palun pidage meeles, et see on automaatne sõnum, palun ärge sellele vastake. Kui teil on küsimusi, võtke meiega ühendust meie ametlike kanalite kaudu.
-
+    Palju õnne, ${participantInfo.nameFirst}, olete IFUSCO veebisaidil registreeritud.
+  
+    Registreerimisvorm konverentsile ise on saadaval veebisaidil.
+ 
+    Pange tähele, et tegemist on automaatse sõnumiga, palun ärge sellele vastake. Kui teil on küsimusi, võtke meiega ühendust meie ametlike kanalite kaudu.
+ 
     ================================================
 
     Вітаємо, ${participantInfo.nameFirst}, вас зареєстровано на веб-сторінці IFUSCO.
@@ -127,22 +127,22 @@ const emailContent = (participantInfo: any) => ({
 
    ================================================
 
-    Õnnitleme, ${
-      participantInfo.nameFirst
-    }, Teid on registreeritud IFUSCO osalejaks!
+   Palju õnne,${
+     participantInfo.nameFirst
+   }, olete registreeritud IFUSCO osalejaks!
 
-    Palun ärge unustage tasuda registreerimistasu, mida saate teha pangaülekandega SUGRI ametlikule pangakontole.
+   Palun ärge unustage tasuda registreerimistasu, mida saate teha pangaülekandega SUGRI ametlikule pangakontole.
+   
+   Recipient of the payment: Sugri ry
+   Account Number: FI72 4713 0010 0712 15
+   Reference Number: 13165
+   Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    Recipient of the payment: Sugri ry
-    Account Number: FI72 4713 0010 0712 15
-    Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+   Kui teil on küsimusi või probleeme, võtke meiega ühendust aadressil: ifusco2023@utu.fi;
 
-    Kui teil on küsimusi või probleeme, palun kirjutage meile aadressil: ifusco2023@utu.fi;
+   Kohtumiseni Turus või internetis!
 
-    Kohtumiseni Turus või veebis!
-
-    Palun kontrollige esitatud andmeid ja võtke meiega ühendust, kui midagi on valesti.
+   Palun kontrollige esitatud teavet ja võtke meiega ühendust, kui midagi on valesti.
 
     ================================================
 
