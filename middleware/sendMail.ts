@@ -50,9 +50,9 @@ const emailContent = (participantInfo: any) => ({
     Наголошуємо, що це повідомлення є автоматичним, не відповідайте на нього. Якщо у вас є питання, зверніться до нас через будь-який з наших офіційних каналів (https://ifusco2023.info/navigation/contact). 
   
     ================================================
-   
+    
     Glückwunsch, ${participantInfo.nameFirst}, du bist nun auf der IFUSCO-Webseite angemeldet.
-   
+ 
     Das Anmeldeformular für die Konferenz selbst ist hier auf der Webseite verfügbar.
 
     Dies ist eine automatische Nachricht, bitte antworte nicht darauf. Bei Fragen kontaktiere uns bitte über einen unserer offiziellen Kanäle (https://ifusco2023.info/navigation/contact).
@@ -187,11 +187,11 @@ const emailContent = (participantInfo: any) => ({
     Letzter Zahlungstermin ist der 31.3.2023.
 
     Bei Fragen oder Anregungen schreibe uns bitte an: ifusco2023@utu.fi.
- 
+    
     Bis bald in Turku oder online!
-
+ 
     Bitte überprüfe die von dir angegebenen Daten und kontaktiere uns, falls etwas nicht stimmt.
-
+ 
     ================================================
 
     Поздравляем, ${
@@ -261,7 +261,7 @@ const emailContent = (participantInfo: any) => ({
    
    ================================================
 
-   ${participantInfo.nameFirst}, die Zahlung Ihrer Teilnahmegebühr eingegangen ist. 
+   ${participantInfo.nameFirst}, die Zahlung Ihrer Teilnahmegebühr eingegangen ist.
    
    ================================================
 
