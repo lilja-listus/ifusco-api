@@ -28,11 +28,11 @@ const emailContent = (participantInfo: any) => ({
     ================================================
  
     Gratulálunk, ${participantInfo.nameFirst}, sikeresen regisztráltál az IFUSCO honlapjára!
-   
-    A regisztrációs űrlap magára a konferenciára elérhetővé válik.
-
+ 
+    A regisztrációs űrlap mostantól elérhető a honlapon.
+ 
     Ez egy automatikus visszaigazoló e-mail, kérlek ne válaszolj rá! Amennyiben kérdésed van, elész minket a hivatalos csatornáink egyikén (https://ifusco2023.info/navigation/contact).
-
+ 
     ================================================
 
     Palju õnne, ${participantInfo.nameFirst}, olete IFUSCO veebisaidil registreeritud.
@@ -117,7 +117,7 @@ const emailContent = (participantInfo: any) => ({
     }, sikeresen regisztráltál az IFUSCO-ra!
 
     Kérünk ne felejtsd el befizetni a regisztrációs díjat, melyet a SUGRI hivatalos bankszámlájára tudsz átutalni.
-  
+
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
@@ -131,7 +131,7 @@ const emailContent = (participantInfo: any) => ({
 
     Kérünk ellenőrizd az adataid és tudasd velünk, ha valami esetleg nem stimmel.
 
-   ================================================
+    ================================================
 
    Palju õnne,${
      participantInfo.nameFirst
