@@ -11,15 +11,23 @@ export class ParticipationDetails {
 
   @Field()
   @Property({ required: true })
-  accommodation: boolean;
-
-  @Field()
-  @Property({ required: true })
   trip: string;
 
   @Field()
   @Property({ required: true })
   conferenceDinner: boolean;
+
+  @Field()
+  @Property({ nullable: true })
+  presentationName?: string;
+
+  @Field()
+  @Property({ nullable: true })
+  presentationLanguage?: string;
+
+  @Field()
+  @Property({ nullable: true })
+  presentationSlidesLanguage?: string;
 
   @Field({ nullable: true })
   @Property()

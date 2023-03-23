@@ -6,17 +6,23 @@ export class ParticipationDetailsInput {
   @Field({ nullable: true })
   id?: ObjectId;
 
-  @Field()
-  accommodation: boolean;
-
-  @Field()
+  @Field({ nullable: true })
   trip: string;
 
-  @Field()
+  @Field({ nullable: true })
   conferenceDinner: boolean;
 
-  @Field()
+  @Field({ nullable: true })
   abstract: boolean;
+
+  @Field({ nullable: true })
+  presentationName?: string;
+
+  @Field({ nullable: true })
+  presentationLanguage?: string;
+
+  @Field({ nullable: true })
+  presentationSlidesLanguage?: string;
 
   @Field()
   participantId: ObjectId;

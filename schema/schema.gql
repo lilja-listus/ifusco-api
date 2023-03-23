@@ -82,19 +82,23 @@ input ParticipantInput {
 type ParticipationDetails {
   _id: objectId!
   abstract: Boolean
-  accommodation: Boolean!
   conferenceDinner: Boolean!
   participant: Participant
+  presentationLanguage: String!
+  presentationName: String!
+  presentationSlidesLanguage: String!
   trip: String!
 }
 
 input ParticipationDetailsInput {
-  abstract: Boolean!
-  accommodation: Boolean!
-  conferenceDinner: Boolean!
+  abstract: Boolean
+  conferenceDinner: Boolean
   id: objectId
   participantId: objectId!
-  trip: String!
+  presentationLanguage: String
+  presentationName: String
+  presentationSlidesLanguage: String
+  trip: String
 }
 
 type Query {
