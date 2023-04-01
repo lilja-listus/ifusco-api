@@ -81,7 +81,7 @@ const emailContent = (participantInfo: any) => ({
     Reference Number: 13165
     Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    The last date for payment is 31.3.2023.
+    The last date for payment is 9.04.2023.
 
     If you have any questions or issues, please write us to: ifusco2023@utu.fi.
     
@@ -102,7 +102,7 @@ const emailContent = (participantInfo: any) => ({
     Viite: 13165
     Summa: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    Viimeinen maksupäivä on 31.3.2023.
+    Viimeinen maksupäivä on 9.04.2023.
    
     Jos sinulla on kysyttävää tai ongelmia, kirjoita meille osoitteeseen ifusco2023@utu.fi.
    
@@ -123,7 +123,7 @@ const emailContent = (participantInfo: any) => ({
     Reference Number: 13165
     Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    A kifizetés utolsó határideje: 2023.3.31.
+    A kifizetés utolsó határideje: 2023.04.09.
 
     Ha kérdésed vagy problémád akad, írj nekünk: ifusco2023@utu.fi.
   
@@ -144,7 +144,7 @@ const emailContent = (participantInfo: any) => ({
    Reference Number: 13165
    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-   Viimane maksetähtaeg on 31.3.2023.
+   Viimane maksetähtaeg on 9.04.2023.
 
    Kui teil on küsimusi või probleeme, võtke meiega ühendust aadressil: ifusco2023@utu.fi;
 
@@ -163,7 +163,7 @@ const emailContent = (participantInfo: any) => ({
     Reference Number: 13165
     Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    Останній день для оплати - 31.3.2023.
+    Останній день для оплати - 9.04.2023.
 
     У випадку питань чи проблем звертайтеся до нас: ifusco2023@utu.fi.
   
@@ -184,7 +184,7 @@ const emailContent = (participantInfo: any) => ({
     Reference Number: 13165
     Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    Letzter Zahlungstermin ist der 31.3.2023.
+    Letzter Zahlungstermin ist der 9.04.2023.
 
     Bei Fragen oder Anregungen schreibe uns bitte an: ifusco2023@utu.fi.
     
@@ -205,7 +205,7 @@ const emailContent = (participantInfo: any) => ({
     Reference Number: 13165
     Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
 
-    Последний день для оплаты - 31.3.2023.
+    Последний день для оплаты - 9.04.2023.
 
     Если у вас есть какие-либо вопросы или проблемы, напишите нам по адресу: ifusco2023@utu.fi.
     
