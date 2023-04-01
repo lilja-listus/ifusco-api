@@ -70,16 +70,14 @@ const emailContent = (participantInfo: any) => ({
   [Actions.NEW_PARTICIPANT]: {
     subject: "IFUSCO 2023  Registration Confirmation (automatic message)",
     text: `
-    Congtats, ${
-      participantInfo.nameFirst
-    },  You've been registered as a participant at IFUSCO! 
+    Congtats, ${participantInfo.nameFirst},  You've been registered as a participant at IFUSCO! 
 
     Please, don't forget to pay the registration fee which you can do with a bank transfer to SUGRI official back account. 
     
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Amount: €30
 
     The last date for payment is 9.04.2023.
 
@@ -91,16 +89,14 @@ const emailContent = (participantInfo: any) => ({
    
     ================================================
   
-    Onnittelut, ${
-      participantInfo.nameFirst
-    }, olet ilmoittautunut IFUSCO:n osallistujaksi!
+    Onnittelut, ${participantInfo.nameFirst}, olet ilmoittautunut IFUSCO:n osallistujaksi!
  
     Muistathan maksaa osallistumismaksun. Osallistumismaksun voi maksaa pankkisiirrolla Sugri ry:n tilille.
 
     Maksun vastaanottaja: Sugri ry
     Tili: FI72 4713 0010 0712 15
     Viite: 13165
-    Summa: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Summa: €30
 
     Viimeinen maksupäivä on 9.04.2023.
    
@@ -112,16 +108,14 @@ const emailContent = (participantInfo: any) => ({
   
     ================================================
 
-    Gratulálunk, ${
-      participantInfo.nameFirst
-    }, sikeresen regisztráltál az IFUSCO-ra!
+    Gratulálunk, ${participantInfo.nameFirst}, sikeresen regisztráltál az IFUSCO-ra!
 
     Kérünk ne felejtsd el befizetni a regisztrációs díjat, melyet a SUGRI hivatalos bankszámlájára tudsz átutalni.
 
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Amount: €30
 
     A kifizetés utolsó határideje: 2023.04.09.
 
@@ -133,16 +127,14 @@ const emailContent = (participantInfo: any) => ({
 
     ================================================
 
-   Palju õnne,${
-     participantInfo.nameFirst
-   }, olete registreeritud IFUSCO osalejaks!
+   Palju õnne,${participantInfo.nameFirst}, olete registreeritud IFUSCO osalejaks!
 
    Palun ärge unustage tasuda registreerimistasu, mida saate teha pangaülekandega SUGRI ametlikule pangakontole.
    
    Recipient of the payment: Sugri ry
    Account Number: FI72 4713 0010 0712 15
    Reference Number: 13165
-   Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+   Amount: €30
 
    Viimane maksetähtaeg on 9.04.2023.
 
@@ -161,7 +153,7 @@ const emailContent = (participantInfo: any) => ({
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Amount: €30
 
     Останній день для оплати - 9.04.2023.
 
@@ -173,16 +165,14 @@ const emailContent = (participantInfo: any) => ({
 
     ================================================
 
-    Glückwunsch, ${
-      participantInfo.nameFirst
-    }, du hast dich erfolgreich zur Teilnahme an der IFUSCO registriert!
+    Glückwunsch, ${participantInfo.nameFirst}, du hast dich erfolgreich zur Teilnahme an der IFUSCO registriert!
 
     Vergiss bitte nicht, die Teilnahmegebühr via Banküberweisung ans offizielle SUGRI Bankkonto zu überweisen.
  
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Amount: €30
 
     Letzter Zahlungstermin ist der 9.04.2023.
 
@@ -194,16 +184,14 @@ const emailContent = (participantInfo: any) => ({
  
     ================================================
 
-    Поздравляем, ${
-      participantInfo.nameFirst
-    }, регистрация на Ифуско 2023 прошла успешно. 
+    Поздравляем, ${participantInfo.nameFirst}, регистрация на Ифуско 2023 прошла успешно. 
     
     Пожалуйста, не забудьте оплатить регистрационный сбор, который вы можете сделать банковским переводом на официальный счет SUGRI.
     
     Recipient of the payment: Sugri ry
     Account Number: FI72 4713 0010 0712 15
     Reference Number: 13165
-    Amount: ${participantInfo.needTShirt ? "€47" : "€30"}
+    Amount: €30
 
     Последний день для оплаты - 9.04.2023.
 
@@ -226,12 +214,7 @@ const emailContent = (participantInfo: any) => ({
     Phone Number:  ${participantInfo.phoneNumber},
     Communication Language:  ${participantInfo.communicationLanguage},
     Dietary Restrictions:  ${participantInfo.food},
-    Giving Concent on Using Pictures in Social Media:  ${
-      participantInfo.arePicturesAllowed
-    },
-    Interested in Free Accommodation:  ${
-      participantInfo.freeAccomModationInterest
-    },
+    Giving Concent on Using Pictures in Social Media:  ${participantInfo.arePicturesAllowed},
     Holding Presentation:  ${participantInfo.isHoldingPresentation},
     Agree to Appear in Publications:  ${participantInfo.agreeForPublications},
     
@@ -286,12 +269,8 @@ export const sendConfirmationEmail = (
   communicationLanguage?: string,
   food?: string,
   arePicturesAllowed?: boolean,
-  freeAccomModationInterest?: boolean,
   isHoldingPresentation?: boolean,
-  agreeForPublications?: boolean,
-  needTShirt?: boolean,
-  tShirtSize?: string,
-  tShirtColor?: string
+  agreeForPublications?: boolean
 ) => {
   const participantInfo = {
     nameFirst,
@@ -304,12 +283,8 @@ export const sendConfirmationEmail = (
     communicationLanguage,
     food,
     arePicturesAllowed,
-    freeAccomModationInterest,
     isHoldingPresentation,
     agreeForPublications,
-    needTShirt,
-    tShirtSize,
-    tShirtColor,
   };
 
   const options = {

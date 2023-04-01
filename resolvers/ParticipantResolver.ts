@@ -29,9 +29,6 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
-      needTShirt,
-      tShirtSize,
-      tShirtColor,
     }: RegistrationInput
   ): Promise<Participant> {
     const existingParticipant = await ParticipantModel.findOne({
@@ -57,9 +54,6 @@ export class ParticipantResolver {
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
-      needTShirt,
-      tShirtSize,
-      tShirtColor,
     });
 
     await participant.save();
@@ -91,10 +85,7 @@ export class ParticipantResolver {
       arePicturesAllowed,
       freeAccomModationInterest,
       isHoldingPresentation,
-      agreeForPublications,
-      needTShirt,
-      tShirtSize,
-      tShirtColor
+      agreeForPublications
     );
 
     return participant;
