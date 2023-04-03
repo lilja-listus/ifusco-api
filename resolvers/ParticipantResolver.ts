@@ -25,7 +25,6 @@ export class ParticipantResolver {
       food,
       communicationLanguage,
       arePicturesAllowed,
-      freeAccomModationInterest,
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
@@ -50,7 +49,6 @@ export class ParticipantResolver {
       communicationLanguage,
       food,
       arePicturesAllowed,
-      freeAccomModationInterest,
       isHoldingPresentation,
       agreeForPublications,
       hasPaid,
@@ -83,7 +81,6 @@ export class ParticipantResolver {
       communicationLanguage,
       food,
       arePicturesAllowed,
-      freeAccomModationInterest,
       isHoldingPresentation,
       agreeForPublications
     );
